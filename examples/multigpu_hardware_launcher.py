@@ -26,7 +26,7 @@ if __name__ == "__main__":
     gpu.up_if_not()
 
     # Set up remote function
-    reqs = ['./', 'accelerate', 'transformers', 'datasets', 'evaluate','tqdm', 'scipy', 'scikit-learn', 'tensorboard',
+    reqs = ['pip:./', 'transformers', 'datasets', 'evaluate','tqdm', 'scipy', 'scikit-learn', 'tensorboard',
             'torch --upgrade --extra-index-url https://download.pytorch.org/whl/cu117']
     launch_train_gpu = rh.function(fn=launch_train,
                                    system=gpu,
