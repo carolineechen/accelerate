@@ -13,10 +13,13 @@ specific language governing permissions and limitations under the License.
 # Launching Distributed on Remote Hardware (with Auto Setup)
 
 This page demonstrates how to run accelerate launch on remote, self-hosted hardware, with automatic dependency and
-environment setup. You can develop fully locally on a Colab or local Python script, while submitting distributed
-launching to a remote cluster to take advantage of remote hardware.
+environment setup, via [Runhouse](https://github.com/run-house/runhouse). You can develop fully locally on a Colab
+or local Python script, while submitting distributed launching to a remote cluster to take advantage of accelerators
+like GPUs or TPUs.
 
 Remote hardware includes both on-demand clusters through cloud providers and existing clusters with SSH credentials.
+For more info, see the
+[Runhouse compute overview](https://runhouse-docs.readthedocs-hosted.com/en/latest/overview/compute.html).
 
 This tutorial is also available as a Colab [here]().
 
@@ -56,7 +59,7 @@ gpu = rh.cluster(
 # Define Distributed Launch Function
 
 The following function, `launch_train`, takes in a training function callable, along with it's config and hyperparameter
-arguements, and abstracts away the process to launch mutli-GPU processing.
+arguments, and abstracts away the process to launch mutli-GPU processing.
 
 ```python
 import torch
